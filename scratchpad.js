@@ -125,6 +125,7 @@ var fib = function (n, node) {
     var tree = fibSequence(n);
     node.appendChild(tree.html);
     node.setAttribute("id", "fib");
+    document.querySelector('.red')
 }
 var pell = function (n, node){
     var pellTree = node.querySelector('div.pell');
@@ -146,38 +147,18 @@ var trib = function (n, node){
     node.appendChild(tree.html);
     node.setAttribute("id", "trib");
 }
-var fibButton = function(me){
+var button = function(id, me){
     var form = me.parentNode;
     var slider = form.querySelector('input');
     var value = parseInt(slider.value);
-    fib(value, form.parentNode);
+    if(id === 'Fib') fib(value, form.parentNode);
+    if(id === 'Pell') pell(value, form.parentNode);
+    if(id === 'Trib') trib(value, form.parentNode);
 }
-var pellButton = function(me){
-    var form = me.parentNode;
-    var slider = form.querySelector('input');
-    var value = parseInt(slider.value);
-    pell(value, form.parentNode);
-}
-var tribButton = function(me){
-    var form = me.parentNode;
-    var slider = form.querySelector('input');
-    var value = parseInt(slider.value);
-    trib(value, form.parentNode);
-}
-var fibSlider = function(me){
+var slider = function(id, me){
     var form = me.parentNode;
     var button = form.querySelector('button');
-    button.textContent = 'Fib(' + me.value + ')';
-}
-var pellSlider = function(me){
-    var form = me.parentNode;
-    var button = form.querySelector('button');
-    button.textContent = 'Pell(' + me.value + ')';
-}
-var tribSlider = function(me){
-    var form = me.parentNode;
-    var button = form.querySelector('button');
-    button.textContent = 'Trib(' + me.value + ')';
+    button.textContent = id + '(' + me.value + ')';
 }
 
 /*
