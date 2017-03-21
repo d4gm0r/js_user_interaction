@@ -117,10 +117,13 @@ function tribSequence(n) {
     }
     return { 'value': value, 'html': div };
 }
-var fib = function (n, node) {
-    var tree = fibSequence(n)
+var fib = function(n, node){
+    var fibTree = node.querySelector('div.fib');
+    if(fibTree){
+        node.removeChild(fibTree);
+    }
+    var tree = fibSequence(n);
     node.appendChild(tree.html);
-    node.setAttribute("id", "seq");
 }
 var pell = function (n, node){
     var tree = pellSequence(n)
@@ -235,8 +238,23 @@ redDiv();
 greenDiv();
 blueDiv();
 
+
+
 fib(11, document.querySelector('.red'));
 pell(11, document.querySelector('.green'));
 trib(20, document.querySelector('.blue'));
 
 link();
+
+var fibButton = function(me){
+    var form = me.parentNode;
+    var slider = form.querySelector('input');
+    var value = slider.value;
+    //console.log(value);
+    fib(parseInt(value, form.parentNode);
+}
+var fibSlider = function(me){
+    var form = me.parentNode;
+    var button = form.querySelector('button);
+    button.textContent = 'Fib(' + me.value + ')';
+}
