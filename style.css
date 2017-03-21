@@ -2,8 +2,32 @@
 	display: inline-block;
 	width: 20000px;
 }
+#fib {
+	display: inline-block;
+	width: 20000px;
+}
+#pell {
+	display: inline-block;
+	width: 20000px;
+}
+#trib {
+	display: inline-block;
+	width: 20000px;
+}
 
 .seq {
+	background-color: rgba(255,255,0,0.1);
+	font-size: 90%;
+}
+.fib {
+	background-color: rgba(255,255,0,0.1);
+	font-size: 90%;
+}
+.pell {
+	background-color: rgba(255,255,0,0.1);
+	font-size: 90%;
+}
+.pell {
 	background-color: rgba(255,255,0,0.1);
 	font-size: 90%;
 }
