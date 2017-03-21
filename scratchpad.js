@@ -6,7 +6,7 @@
 function fibSequence(n) {
     var value;
     var div = document.createElement('div');
-    div.setAttribute("class", "fib");
+    div.setAttribute("class", "red shadowed box");
 
     if (n < 2) {
         if (n === 0) {
@@ -41,7 +41,7 @@ function fibSequence(n) {
 function pellSequence(n) {
     var value;
     var div = document.createElement('div');
-    div.setAttribute("class", "pell");
+    div.setAttribute("class", "blue shadowed box");
 
     if(n < 2){
         if (n === 0) {
@@ -76,7 +76,7 @@ function pellSequence(n) {
 function tribSequence(n) {
     var value;
     var div = document.createElement('div');
-    div.setAttribute("class", "trib");
+    div.setAttribute("class", "green shadowed box");
 
     if(n < 3) {
         if (n === 2) {
@@ -117,7 +117,7 @@ function tribSequence(n) {
     return { 'value': value, 'html': div };
 }
 var fib = function (n, node) {
-    var fibTree = node.querySelector('div.fib');
+    var fibTree = node.querySelector('div.red shadowed box');
     if(fibTree)
     {
         node.removeChild(fibTree);
@@ -125,10 +125,9 @@ var fib = function (n, node) {
     var tree = fibSequence(n);
     node.appendChild(tree.html);
     node.setAttribute("id", "fib");
-    document.querySelector('.red')
 }
 var pell = function (n, node){
-    var pellTree = node.querySelector('div.pell');
+    var pellTree = node.querySelector('div.blue shadowed box');
     if(pellTree)
     {
         node.removeChild(pellTree);
@@ -138,7 +137,7 @@ var pell = function (n, node){
     node.setAttribute("id", "pell");
 }
 var trib = function (n, node){
-    var tribTree = node.querySelector('div.trib');
+    var tribTree = node.querySelector('div.green shadowed box');
     if(tribTree)
     {
         node.removeChild(tribTree);
@@ -151,9 +150,9 @@ var button = function(id, me){
     var form = me.parentNode;
     var slider = form.querySelector('input');
     var value = parseInt(slider.value);
-    if(id === 'Fib') fib(value, form.parentNode);
-    if(id === 'Pell') pell(value, form.parentNode);
-    if(id === 'Trib') trib(value, form.parentNode);
+    if(id === 'Fib')    fib(value, form.parentNode);
+    if(id === 'Pell')   pell(value, form.parentNode);
+    if(id === 'Trib')   trib(value, form.parentNode);
 }
 var slider = function(id, me){
     var form = me.parentNode;
