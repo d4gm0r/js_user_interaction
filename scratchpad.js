@@ -6,7 +6,7 @@
 function fibSequence(n) {
     var value;
     var div = document.createElement('div');
-    div.setAttribute("class", "red shadowed box");
+    div.setAttribute("class", "seq");
 
     if (n < 2) {
         if (n === 0) {
@@ -41,7 +41,7 @@ function fibSequence(n) {
 function pellSequence(n) {
     var value;
     var div = document.createElement('div');
-    div.setAttribute("class", "blue shadowed box");
+    div.setAttribute("class", "seq");
 
     if(n < 2){
         if (n === 0) {
@@ -76,7 +76,7 @@ function pellSequence(n) {
 function tribSequence(n) {
     var value;
     var div = document.createElement('div');
-    div.setAttribute("class", "green shadowed box");
+    div.setAttribute("class", "seq");
 
     if(n < 3) {
         if (n === 2) {
@@ -117,34 +117,34 @@ function tribSequence(n) {
     return { 'value': value, 'html': div };
 }
 var fib = function (n, node) {
-    var fibTree = node.querySelector('div.red shadowed box');
+    var fibTree = node.querySelector('div.seq');
     if(fibTree)
     {
         node.removeChild(fibTree);
     }
     var tree = fibSequence(n);
     node.appendChild(tree.html);
-    node.setAttribute("id", "fib");
+    node.setAttribute("id", "seq");
 }
 var pell = function (n, node){
-    var pellTree = node.querySelector('div.blue shadowed box');
+    var pellTree = node.querySelector('div.seq');
     if(pellTree)
     {
         node.removeChild(pellTree);
     }
     var tree = pellSequence(n)
     node.appendChild(tree.html);
-    node.setAttribute("id", "pell");
+    node.setAttribute("id", "seq");
 }
 var trib = function (n, node){
-    var tribTree = node.querySelector('div.green shadowed box');
+    var tribTree = node.querySelector('div.seq');
     if(tribTree)
     {
         node.removeChild(tribTree);
     }
     var tree = tribSequence(n)
     node.appendChild(tree.html);
-    node.setAttribute("id", "trib");
+    node.setAttribute("id", "seq");
 }
 var button = function(id, me){
     var form = me.parentNode;
