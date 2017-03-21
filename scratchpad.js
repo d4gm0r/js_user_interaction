@@ -2,7 +2,6 @@
 //Nathan Larsen A01532780
 //JavaScript Recursive Sequences
 //
-document.title = "Recursive Sequences";
 
 function fibSequence(n) {
     var value;
@@ -158,7 +157,28 @@ var fibSlider = function(me){
     var button = form.querySelector('button');
     button.textContent = 'Fib(' + me.value + ')';
 }
-
+var pellButton = function(me){
+    var form = me.parentNode;
+    var slider = form.querySelector('input');
+    var value = slider.value;
+    pell(parseInt(value, form.parentNode));
+}
+var pellSlider = function(me){
+    var form = me.parentNode;
+    var button = form.querySelector('button');
+    button.textContent = 'Pell(' + me.value + ')';
+}
+var tribButton = function(me){
+    var form = me.parentNode;
+    var slider = form.querySelector('input');
+    var value = slider.value;
+    trib(parseInt(value, form.parentNode));
+}
+var tribSlider = function(me){
+    var form = me.parentNode;
+    var button = form.querySelector('button');
+    button.textContent = 'Trib(' + me.value + ')';
+}
 document.querySelector('body').appendChild(style);
 
 var divMakerMaker = function(color, id) {
@@ -170,7 +190,7 @@ var divMakerMaker = function(color, id) {
     }
 }
 
-/*
+
 var redDiv = divMakerMaker('red', 'fib');
 var greenDiv = divMakerMaker('green', 'pell');
 var blueDiv = divMakerMaker('blue', 'trib');
@@ -183,4 +203,4 @@ fib(11, document.querySelector('.red'));
 pell(11, document.querySelector('.green'));
 trib(20, document.querySelector('.blue'));
 
-*/
+
