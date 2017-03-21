@@ -1,6 +1,6 @@
 //
 //Nathan Larsen A01532780
-//JavaScript User Interaction
+//JavaScript Recursive Sequences
 //
 document.title = "Recursive Sequences";
 
@@ -117,108 +117,49 @@ function tribSequence(n) {
     }
     return { 'value': value, 'html': div };
 }
-var fib = function(n, node){
+var fib = function (n, node) {
     var fibTree = node.querySelector('div.fib');
-    if(fibTree){
+    if(fibTree)
+    {
         node.removeChild(fibTree);
     }
     var tree = fibSequence(n);
     node.appendChild(tree.html);
+    node.setAttribute("id", "seq");
 }
 var pell = function (n, node){
+    var pellTree = node.querySelector('div.pell');
+    if(pellTree)
+    {
+        node.removeChild(pellTree);
+    }
     var tree = pellSequence(n)
     node.appendChild(tree.html);
     node.setAttribute("id", "seq");
 }
 var trib = function (n, node){
+    var tribTree = node.querySelector('div.trib');
+    if(tribTree)
+    {
+        node.removeChild(tribTree);
+    }
     var tree = tribSequence(n)
     node.appendChild(tree.html);
     node.setAttribute("id", "seq");
 }
-var style = document.createElement('style');
-style.textContent =
-    "#seq {" +
-    "	display: inline-block;" +
-    "	width: 20000px;" +
-    "}" +
-    "" +
-    ".seq {" +
-    "	background-color: rgba(255,255,0,0.1);" +
-    "	font-size: 90%;"+
-    "}" +
-    "" +
-    ".seq-left {" +
-    "	float: left;" +
-    "	display: inline-block;" +
-    "	margin-right: 4px;" +
-    "}" +
-    "" +
-    ".seq-right {" +
-    "	float: right;" +
-    "	display: inline-block;" +
-    "	margin-left: 4px;" +
-    "}" +
-    "" +
-    ".seq-mid {" +
-    "	display: inline-block;" +
-    "	margin: auto;" +
-    "}" +
-    "" +
-    ".shadow {" +
-    "	text-shadow: 1px 1px 2px black;" +
-    "	color:       white;" +
-    "}" +
-    ".box {" +
-    "	font-family: 'helvetica neue', helvetica, sans-serif;" +
-    "	letter-spacing: 1px;" +
-    "	text-transform: capitalize;" +
-    "	text-align: center;" +
-    "	padding: 3px 10px;" +
-    "	margin: 10px;" +
-    "	cursor: pointer;" +
-    "	border-radius: 10px;" +
-    "	border-width: 2px;" +
-    "	border-style: solid;" +
-    "}" +
-    "" +
-    ".link {" +
-    "	border-color: rgb(0,255,0);" +
-    "	background:   rgb(60,180,60);" +
-    "	box-shadow: 1px 1px 2px rgba(0,200,0,0.4);" +
-    "}" +
-    "" +
-    ".red {" +
-    "	border-color: rgb(255,0,0);" +
-    "	background:   rgb(180,60,60);" +
-    "	box-shadow: 1px 1px 2px rgba(200,0,0,0.4);" +
-    "}" +
-    "" +
-    ".blue {" +
-    "	border-color: rgb(0,0,255);" +
-    "	background:   rgb(60,60,180);" +
-    "	box-shadow: 1px 1px 2px rgba(0,0,200,0.4);" +
-    "}" +
-    "" +
-    ".green {" +
-    "	border-color: rgb(0,255,0);" +
-    "	background:   rgb(60,180,60);" +
-    "	box-shadow: 1px 1px 2px rgba(0,200,0,0.4);" +
-    "}";
+var fibButton = function(me){
+    var form = me.parentNode;
+    var slider = form.querySelector('input');
+    var value = slider.value;
+    fib(parseInt(value, form.parentNode));
+}
+var fibSlider = function(me){
+    var form = me.parentNode;
+    var button = form.querySelector('button');
+    button.textContent = 'Fib(' + me.value + ')';
+}
 
 document.querySelector('body').appendChild(style);
-
-var link = function(){
-    var fib = "Fibonacci";
-    var fibLink = fib.link("https://oeis.org/A000045");
-
-    var pell = "Pell";
-    var pellLink = pell.link("https://oeis.org/A000129");
-
-    var trib = "Tribonacci";
-    var tribLink = trib.link("https://oeis.org/A000073");
-
-    document.write("For more information on these sequences: " + fibLink + ", " + pellLink + ", " + tribLink);
-}
 
 var divMakerMaker = function(color, id) {
     return function() {
@@ -229,7 +170,7 @@ var divMakerMaker = function(color, id) {
     }
 }
 
-
+/*
 var redDiv = divMakerMaker('red', 'fib');
 var greenDiv = divMakerMaker('green', 'pell');
 var blueDiv = divMakerMaker('blue', 'trib');
@@ -238,23 +179,8 @@ redDiv();
 greenDiv();
 blueDiv();
 
-
-
 fib(11, document.querySelector('.red'));
 pell(11, document.querySelector('.green'));
 trib(20, document.querySelector('.blue'));
 
-link();
-
-var fibButton = function(me){
-    var form = me.parentNode;
-    var slider = form.querySelector('input');
-    var value = slider.value;
-    //console.log(value);
-    fib(parseInt(value, form.parentNode);
-}
-var fibSlider = function(me){
-    var form = me.parentNode;
-    var button = form.querySelector('button);
-    button.textContent = 'Fib(' + me.value + ')';
-}
+*/
