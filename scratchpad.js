@@ -1,6 +1,6 @@
 //
 //Nathan Larsen A01532780
-//JavaScript Recursive Sequences
+//JavaScript User Interaction
 //
 
 function fibSequence(n) {
