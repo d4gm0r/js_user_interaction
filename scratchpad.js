@@ -160,28 +160,3 @@ var slider = function(id, me){
     button.textContent = id + '(' + me.value + ')';
 }
 
-/*
-var divMakerMaker = function(color, id) {
-    return function() {
-        var div = document.createElement('div');
-        div.setAttribute('class', color + ' shadow box');
-        div.setAttribute('id', id);
-        document.body.appendChild(div);
-    }
-}
-
-
-var redDiv = divMakerMaker('red', 'fib');
-var greenDiv = divMakerMaker('green', 'pell');
-var blueDiv = divMakerMaker('blue', 'trib');
-
-redDiv();
-greenDiv();
-blueDiv();
-
-/*
-fib(11, document.querySelector('.red'));
-pell(11, document.querySelector('.green'));
-trib(20, document.querySelector('.blue'));
-*/
-
